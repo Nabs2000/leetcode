@@ -35,9 +35,3 @@ class Solution(object):
             for j in range(i+1, len(nums[i+1:]) + 1):
                 if nums[i] + nums[j] == target:
                     return [i, j]
-
-        ## FINAL: This way fixed the splicing issue
-        for i in range(len(nums)):
-            for j in range(i+1, len(nums)):
-                if nums[i] + nums[j] == target:
-                    return [i, j]
