@@ -24,7 +24,14 @@ class Solution(object):
         
         # This won't cause index error because there HAS to be a solution, per the question's disclaimer, so i will never equal len(nums) - 1
         
-        for i in range(len(nums)):
-            if nums[i] + nums[i+1] == target:
-                return [i, i+1]
+        # for i in range(len(nums)):
+        #     if nums[i] + nums[i+1] == target:
+        #         return [i, i+1]
         
+        ## 3rd attempt
+
+        # This will allow me to iterate thru the nums array properly without index errors, since i am only shifting j by i + 1 and not splicing the nums array
+        for i in range(len(nums)):
+            for j in range(i+1, len(nums[i+1:]) + 1):
+                if nums[i] + nums[j] == target:
+                    return [i, j]
